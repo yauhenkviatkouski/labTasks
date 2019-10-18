@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/yauhenkviatkouski/labTasks/issues"
   },
-  "homepage": "https://github.com/yauhenkviatkouski/labTasks#readme"
+  "homepage": "https://github.com/yauhenkviatkouski/labTasks#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-plugin-es5": "^1.4.1"
+  }
 }
