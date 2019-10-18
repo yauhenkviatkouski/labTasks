@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<HEAD>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+  <META NAME="CREATED" CONTENT="0;0">
+  <META NAME="CHANGED" CONTENT="0;0">
+  <STYLE TYPE="text/css">
+    <!--
+    @page {
+      size: 8.5in 11in;
+      margin-left: 1in;
+      margin-right: 1in;
+      margin-top: 0.5in;
+      margin-bottom: 0.5in
+    }
+
+    P {
+      margin-bottom: 0.08in;
+      direction: ltr;
+      widows: 2;
+      orphans: 2
+    }
+    -->
+  </STYLE>
+  <link href="src/styles.css" rel="stylesheet">
+</HEAD>
+
+<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
+  <DIV TYPE=HEADER>
+    <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <TR VALIGN=TOP>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=LEFT STYLE="margin-left: -0.08in"><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=CENTER><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=RIGHT STYLE="margin-right: -0.08in"><BR>
+          </P>
+        </TD>
+      </TR>
+    </TABLE>
+    <P STYLE="margin-bottom: 0.46in; line-height: 100%"><BR>
+    </P>
+  </DIV>
+  <P STYLE="margin-bottom: 0in"><B>Все задания требуют
+      подготовки демонстрационной страницы,
+      на которой будут представлены все
+      возможные варианты использования
+      функционала согласно задания. - [простыми
+      словами - продемонстрировать работу
+      всех реализованных функций]</B></P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Array Processing Tool</B></P>
+      <OL TYPE=a>
+        <LI>
+          <P STYLE="margin-bottom: 0in"><B>Sub Sum</B></P>
+      </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">На входе
+    массив чисел, например: arr = [1, -2, 3, 4, -9,
+    6].</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Задача —
+    найти непрерывный подмассив arr, сумма
+    элементов которого максимальна. Функция
+    должна возвращать только эту сумму.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Например:</P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, <U><B>2, 3</B></U>,
+        -9]) = 5</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>2, -1, 2, 3</B></U>,
+        -9]) = 6</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, 2, 3, -9, <U><B>11</B></U>])
+        = 11
+      </P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-2, -1, <U><B>1, 2</B></U>])
+        = 3</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>100</B></U>,
+        -9, 2, -3, 5]) = 100</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>1, 2, 3</B></U>])
+        = 6</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, -2, -3]) = 0</P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать два
+    решения, сложность O(n<SUP>2</SUP>) и O(n). </P>
+  <div class="result subSum">
+    сложность O(n<SUP>2</SUP>):
+    <form onSubmit="alert(subSum(document.querySelector('#field').value)); return false">
+      <input id="field" type="text" value="[-2, -1, 1, 2]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <OL>
+    <OL TYPE=a START=2>
+      <LI>
+        <P STYLE="margin-bottom: 0in"><B>Search</B></P>
+    </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал поиска минимального,
+    максимального, медианного значения в
+    массиве.</P>
+  <OL>
+    <OL TYPE=a START=3>
+      <LI>
+        <P STYLE="margin-bottom: 0in"><B>Selection Task</B></P>
+    </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал поиска возрастающей
+    последовательности максимальной длины
+    в исходном массиве.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Например: 1,
+    3, 7, 4, 6, 7, 8, <U><B>1, 2, 5, 7, 8, 90</B></U>, 1</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"> Все функции обернуть
+    в один объект для обработки массивов.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <OL START=2>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Date Display Formatter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект для форматирования дат (объект
+    содержащий набор функций). Объект должен
+    позволять обрабатывать входные данные
+    в виде строки или в виде числа (ticks, ms).
+    Объект должен поддерживать возможность
+    передачи внутрь регулярного выражения
+    для разбора исходной строки и построения
+    выходной строки.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 0.5in; text-indent: 0.5in; margin-bottom: 0in">
+    Например:</P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in">“31102011” =&gt; “31-10-2011”</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">“31102011” =&gt; “31 October
+        2011”</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“20130431”, “YYYYMMDD”)
+        =&gt; 31 April 2013</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“20130431”, “YYYYMMDD”,
+        “MM-DD-YYYY”) =&gt; 04-31-2013</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“2013-04-31”,
+        “YYYY-MM-DD”).fromNow() =&gt; 2 years ago</P>
+  </OL>
+  <P STYLE="margin-bottom: 0in"> </P>
+  <P STYLE="margin-bottom: 0in"> Реализовать как можно
+    больше прикладных конверсий.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=3>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Text Formatter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функцию обработчика входного текста.
+    Функция должна принимать на вход строку,
+    максимальный размер строки (опционально),
+    максимальное количество строк
+    (опционально), тип форматирования
+    (“перенос по слову”, “перенос по
+    символу”, “перенос по предложению”,
+    “переносов нет” - опционально).</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <OL START=4>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>String calculator</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект содержащий набор методов для
+    выполнения функций калькулятора над
+    числами передаваемыми в строковом
+    представлении. Методы должны позволять
+    работать как в целочисленном, так и
+    вещественном формате.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=5>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Array Sorter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект сортировщик, позволяющий
+    производить сортировки целочисленных
+    массивов не менее чем 4 способами.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=6>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Binary Converter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Создать объект
+    позволяющий производить конвертацию
+    чисел из двоичной системы исчисления
+    в десятеричную и обратно. Числа
+    представлены в виде векторов (массивов
+    чисел, где индекс является разрядом).</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
+    создать функции для перевода из любой
+    системы в любую.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 0.5in; text-indent: 0.5in; margin-bottom: 0in">
+    <BR>
+  </P>
+  <OL START=7>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>* Caching calculator</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал позволяющий производить
+    операции над двумя числами и кэширование
+    результата выполнения операции так,
+    чтобы при повторном вызове функционала
+    с теми же параметрами взялось закэшированное
+    значение и не производилось перевычисление
+    результата. Функционал обернуть в объект
+    и сделать демонстрационную страницу
+    для тестирования функционала.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
+    создать функционал регистрации кэшируемых
+    функций, который позволит указывать
+    кэшируемые функции и настройки кэша.
+    Продемонстрировать подключение
+    кэширования нескольких функций и
+    использование кэшируемых результатов
+    этих функций.</P>
+  <DIV TYPE=FOOTER>
+    <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <TR VALIGN=TOP>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=LEFT STYLE="margin-left: -0.08in"><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=CENTER><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=RIGHT STYLE="margin-right: -0.08in"><BR>
+          </P>
+        </TD>
+      </TR>
+    </TABLE>
+    <P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+    </P>
+  </DIV>
+
+  <script src="src/index.js"></script>
+</BODY>
+
+</HTML>

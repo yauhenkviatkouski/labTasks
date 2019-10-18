@@ -1,0 +1,11 @@
+body {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 8px;
+  box-shadow: 0px 0px 69px -12px rgba(0,0,0,0.75);
+}
+
+.result {
+  padding: 8px 30px;
+  background-color: rgb(207, 206, 206);
+}
