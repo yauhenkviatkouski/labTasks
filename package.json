@@ -1,0 +1,19 @@
+{
+  "name": "p2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yauhenkviatkouski/labTasks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yauhenkviatkouski/labTasks/issues"
+  },
+  "homepage": "https://github.com/yauhenkviatkouski/labTasks#readme"
+}
