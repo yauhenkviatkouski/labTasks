@@ -32,29 +32,8 @@
 </HEAD>
 
 <BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
-  <DIV TYPE=HEADER>
-    <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
-      <COL WIDTH=194>
-      <COL WIDTH=194>
-      <COL WIDTH=194>
-      <TR VALIGN=TOP>
-        <TD WIDTH=194 STYLE="border: none; padding: 0in">
-          <P ALIGN=LEFT STYLE="margin-left: -0.08in"><BR>
-          </P>
-        </TD>
-        <TD WIDTH=194 STYLE="border: none; padding: 0in">
-          <P ALIGN=CENTER><BR>
-          </P>
-        </TD>
-        <TD WIDTH=194 STYLE="border: none; padding: 0in">
-          <P ALIGN=RIGHT STYLE="margin-right: -0.08in"><BR>
-          </P>
-        </TD>
-      </TR>
-    </TABLE>
-    <P STYLE="margin-bottom: 0.46in; line-height: 100%"><BR>
-    </P>
-  </DIV>
+  <h3>Демонстрационная страница для задания *P2*:</h3>
+  <p class="subtitle">html код получен автоматически, из файла задания в формате *.docx</p>
   <P STYLE="margin-bottom: 0in"><B>Все задания требуют
       подготовки демонстрационной страницы,
       на которой будут представлены все
@@ -109,10 +88,15 @@
   </P>
   <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать два
     решения, сложность O(n<SUP>2</SUP>) и O(n). </P>
-  <div class="result subSum">
+  <div class="result">
     сложность O(n<SUP>2</SUP>):
-    <form onSubmit="alert(subSum(document.querySelector('#field').value)); return false">
+    <form onSubmit="alert(arrayProcessig.subSum_n2(document.querySelector('#field').value)); return false">
       <input id="field" type="text" value="[-2, -1, 1, 2]">
+      <input type="submit" value="check function">
+    </form>
+    сложность O(n):
+    <form onSubmit="alert(arrayProcessig.subSum_n(document.querySelector('#field2').value)); return false">
+      <input id="field2" type="text" value="[100,-9, 2, -3, 5]">
       <input type="submit" value="check function">
     </form>
   </div>
@@ -126,6 +110,23 @@
     функционал поиска минимального,
     максимального, медианного значения в
     массиве.</P>
+  <div class="result">
+    Минимальное:
+    <form onSubmit="alert(arrayProcessig.searchMin(document.querySelector('#field3').value)); return false">
+      <input id="field3" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+    Максимальное:
+    <form onSubmit="alert(arrayProcessig.searchMax(document.querySelector('#field4').value)); return false">
+      <input id="field4" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+    Медианное:
+    <form onSubmit="alert(arrayProcessig.searchMedian(document.querySelector('#field5').value)); return false">
+      <input id="field5" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
   <OL>
     <OL TYPE=a START=3>
       <LI>
@@ -295,8 +296,7 @@
     <P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
     </P>
   </DIV>
-
-  <script src="src/index.js"></script>
+  <script src="src/arrayProcessig.js"></script>
 </BODY>
 
 </HTML>
