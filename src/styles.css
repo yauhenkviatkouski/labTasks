@@ -11,5 +11,26 @@ body {
 
 .result {
   padding: 8px 30px;
+  margin-bottom: 45px;
   background-color: rgb(207, 206, 206);
+  border-bottom: 1px black solid;
+}
+
+.result:before {
+  content: 'Результат:';
+  display: block;
+  font-size: 18px;
+}
+
+.result form input[type='text'] {
+  display: block;
+  width: 60%;
+}
+
+.result form input[type='submit'] {
+  width: 20%;
+}
+
+.result form p {
+  margin-top: 12px;
 }

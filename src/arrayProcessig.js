@@ -96,5 +96,25 @@
     else return (sort[Math.floor(sort.length / 2 - 1)] + sort[Math.floor(sort.length / 2)]) / 2;
   }
 
+  arrayProcessig.selection = function (arr) {
+    try {
+      arr = JSON.parse(arr);
+      if (!Array.isArray(arr)) throw new Error;
+    } catch (e) {
+      return "It isn't array of numbers!"
+    }
+    var sequence = [arr[0]];
+    var maxSeuence = sequence;
+    for (var i = 1; i < arr.length; i += 1) {
+      if (arr[i] > arr[i - 1]) {
+        sequence.push(arr[i]);
+        if (maxSeuence.length < sequence.length) maxSeuence = sequence;
+      } else {
+        sequence = [arr[i]];
+      }
+    }
+    return maxSeuence;
+  }
+
   window.arrayProcessig = arrayProcessig;
 })();
