@@ -34,3 +34,9 @@ body {
 .result form p {
   margin-top: 12px;
 }
+
+textarea {
+  display: block;
+  width: 60%;
+  height: 90px;
+}
