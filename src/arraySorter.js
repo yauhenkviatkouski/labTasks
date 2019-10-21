@@ -1,4 +1,4 @@
-(function () {
+; (function () {
   var arraySorter = {};
   function isArray(arr) {
     try {

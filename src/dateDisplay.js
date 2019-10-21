@@ -1,4 +1,4 @@
-(function () {
+; (function () {
   var dateDisplay = {};
 
   function _parser(str, inputScheme) {

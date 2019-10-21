@@ -400,6 +400,20 @@
     кэширования нескольких функций и
     использование кэшируемых результатов
     этих функций.</P>
+
+    <div class="result">
+        <form onSubmit="alert(cashingCalc(document.querySelector('#operA').value, document.querySelector('#operB').value, document.querySelector('#operation').value )); return false">
+            a:
+            <input id="operA" type="text" value="3">
+            <br>
+            b:
+            <input id="operB" type="text" value="100">
+            <br>
+            Any operation with a & b:
+            <input id="operation" type="text" value="a * b + a">
+          <input type="submit" value="check function">
+        </form>
+      </div>
   <DIV TYPE=FOOTER>
     <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
       <COL WIDTH=194>
@@ -429,6 +443,7 @@
   <script src="src/arraySorter.js"></script>
   <script src="src/textFormatter.js"></script>
   <script src="src/convertNum.js"></script>
+  <script src="src/cachingCalculator.js"></script>
 </BODY>
 
 </HTML>

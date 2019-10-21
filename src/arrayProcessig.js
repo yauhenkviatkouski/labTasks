@@ -1,4 +1,4 @@
-(function () {
+; (function () {
   var arrayProcessig = {};
 
   arrayProcessig.subSum_n2 = function (array) {

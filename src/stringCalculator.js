@@ -1,4 +1,4 @@
-(function () {
+; (function () {
   function stringCalculator(expr) {
 
     function check(str) {
