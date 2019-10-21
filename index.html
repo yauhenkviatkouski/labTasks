@@ -26,7 +26,7 @@
       widows: 2;
       orphans: 2
     }
-    -->
+
   </STYLE>
   <link href="src/styles.css" rel="stylesheet">
 </HEAD>
@@ -196,9 +196,9 @@
       onSubmit="alert(dateDisplay.formatStr(document.querySelector('#fisrtArg').value, document.querySelector('#secondArg').value, document.querySelector('#thirdArg').value)); return false">
       <p>дата в формате строки</p>
       <input id="fisrtArg" label="asd" type="text" value="2011 08 05">
-      <p>regEx для разбора строки (по умолчанию DDMMYYYY)</p>
+      <p>regEx для разбора строки (опционально, по умолчанию DDMMYYYY)</p>
       <input id="secondArg" type="text" value="YYYY MM DD">
-      <p>regEx для построения выходной строки (YYYY MM/MMMM DD )</p>
+      <p>regEx для построения выходной строки (опционально, формат:YYYY MM/MMMM DD )</p>
       <input id="thirdArg" type="text" value="DD__MM____YYYY">
       <input type="submit" value="check function">
     </form>
@@ -209,7 +209,7 @@
       onSubmit="alert(dateDisplay.formatMs(document.querySelector('#ms').value, document.querySelector('#output').value)); return false">
       <p>дата в формате миллисекунд</p>
       <input id="ms" label="asd" type="text" value="1571669729826">
-      <p>regEx для построения выходной строки (YYYY MM/MMMM DD )</p>
+      <p>regEx для построения выходной строки (опционально, формат: YYYY MM/MMMM DD )</p>
       <input id="output" type="text" value="year: YYYY, month: MMMM, day: DD">
       <input type="submit" value="check function">
     </form>
@@ -219,7 +219,7 @@
       onSubmit="alert(dateDisplay.fromNow(document.querySelector('#fromNow').value, document.querySelector('#input_fromNow').value)); return false">
       <p>дата в формате строки для функции "fromNow()"</p>
       <input id="fromNow" label="asd" type="text" value="2017 10 15">
-      <p>regEx для разбора строки (по умолчанию DDMMYYYY)</p>
+      <p>regEx для разбора строки (опционально, по умолчанию DDMMYYYY)</p>
       <input id="input_fromNow" type="text" value="YYYY MM DD">
       <input type="submit" value="check function">
     </form>
@@ -273,6 +273,48 @@
     объект сортировщик, позволяющий
     производить сортировки целочисленных
     массивов не менее чем 4 способами.</P>
+    <div class="result">
+      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickUp').value)); return false">
+        <p>array for quickSort up</p>
+        <input id="quickUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickDown').value, true)); return false">
+        <p>array for quickSort down</p>
+        <input id="quickDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectUp').value)); return false">
+        <p>array for selectionSort up</p>
+        <input id="selectUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectDown').value, true)); return false">
+        <p>array for selectionSort down</p>
+        <input id="selectDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertUp').value)); return false">
+        <p>array for insertionSort up</p>
+        <input id="insertUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertDown').value, true)); return false">
+        <p>array for insertionSort down</p>
+        <input id="insertDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardUp').value)); return false">
+        <p>array for standardSort up</p>
+        <input id="standardUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardDown').value, true)); return false">
+        <p>array for standardSort down</p>
+        <input id="standardDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+    </div>
   <P STYLE="margin-bottom: 0in"><BR>
   </P>
   <P STYLE="margin-bottom: 0in"><BR>
@@ -349,6 +391,7 @@
   <script src="src/arrayProcessig.js"></script>
   <script src="src/dateDisplay.js"></script>
   <script src="src/stringCalculator.js"></script>
+  <script src="src/arraySorter.js"></script>
 </BODY>
 
 </HTML>
