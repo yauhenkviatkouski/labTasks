@@ -20,6 +20,7 @@ body {
   content: 'Результат:';
   display: block;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .result form input[type='text'] {

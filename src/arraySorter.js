@@ -62,18 +62,20 @@
     }
 
     for (var i = 0; i < arr.length; i += 1) {
-      var v = arr[i];
+      var t = arr[i];
       var j = i - 1;
       if (down === true) {
-        while (j >= 0 && arr[j] < v) {
-          arr[j + 1] = arr[j]; j--;
+        while (j >= 0 && arr[j] < t) {
+          arr[j + 1] = arr[j];
+          j -= 1;
         }
       } else {
-        while (j >= 0 && arr[j] > v) {
-          arr[j + 1] = arr[j]; j--;
+        while (j >= 0 && arr[j] > t) {
+          arr[j + 1] = arr[j];
+          j -= 1;
         }
       }
-      arr[j + 1] = v;
+      arr[j + 1] = t;
     }
     return arr;
   }

@@ -239,6 +239,24 @@
     (“перенос по слову”, “перенос по
     символу”, “перенос по предложению”,
     “переносов нет” - опционально).</P>
+    <div class="result">
+      <form onSubmit="alert(textFormatter(document.querySelector('#textInput').value, {maxSize: document.querySelector('#maxSize').value, maxStrings: document.querySelector('#maxStrings').value, type: document.querySelector('#type').value})); return false">
+        строка на вход:
+        <textarea
+          id="textInput">Задача. Написать функцию обработчика входного текста. Функция должна принимать на вход строку, максимальный размер строки (опционально). Максимальное количество строк (опционально). Тип форматирования (“перенос по слову”, “перенос посимволу”, “перенос по предложению”, “переносов нет” - опционально).</textarea>
+          <br>
+          options.maxSize:
+          <input id="maxSize" type="text">
+          <br>
+          options.maxStrings:
+          <input id="maxStrings" type="text">
+          <br>
+          options.typeFormat (wordBrakes, symbolBrakes, sentenceBrakes):
+          <input id="type" type="text">
+        <input type="submit" value="check function">
+      </form>
+      <p id='txtFormRes'></p>
+    </div>
   <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
   </P>
   <OL START=4>
@@ -392,6 +410,7 @@
   <script src="src/dateDisplay.js"></script>
   <script src="src/stringCalculator.js"></script>
   <script src="src/arraySorter.js"></script>
+  <script src="src/textFormatter.js"></script>
 </BODY>
 
 </HTML>
