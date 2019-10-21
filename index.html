@@ -352,6 +352,23 @@
   <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
     создать функции для перевода из любой
     системы в любую.</P>
+    <div class="result">
+        <form onSubmit="alert(convertNum(document.querySelector('#numberVector').value, document.querySelector('#inputBase').value, document.querySelector('#outputBase').value )); return false">
+            Число в виде вектора (массивов чисел, где индекс является разрядом)
+            <input id="numberVector" type="text" value="[2,0,1,9]">
+            <br>
+            inputBase:
+            <input id="inputBase" type="text" value="10">
+            <br>
+            outputBase:
+            <input id="outputBase" type="text" value="16">
+          <input type="submit" value="check function">
+        </form>
+      </div>
+
+
+
+
   <P STYLE="margin-bottom: 0in"><BR>
   </P>
   <P STYLE="margin-left: 0.5in; text-indent: 0.5in; margin-bottom: 0in">
@@ -411,6 +428,7 @@
   <script src="src/stringCalculator.js"></script>
   <script src="src/arraySorter.js"></script>
   <script src="src/textFormatter.js"></script>
+  <script src="src/convertNum.js"></script>
 </BODY>
 
 </HTML>
