@@ -8,22 +8,16 @@ function bind() {
     args.push(arguments[key]);
   }
   var bindedFunc = '' + args[args.length - 1];
-  var bodyBindedFunc = eval(bindedFunc);
   args.length = args.length - 1;
   return function () {
     for (var key in arguments) {
       args.push(arguments[key]);
     }
-    args += '';
+    args = '(' + args + ')';
 
-
-
-    var operation = '(function(' + args + ')' + bodyBindedFunc + ')()'
-
-    return eval('(function(' + args + ')' + bodyBindedFunc + ')()');
+    return eval('(' + bindedFunc + ')' + args);
   }
 };
 
-console.log(bind(1, 2, foo)(4));
+console.log(bind(1, foo)(2, 4));
 
-// don't use call apply bind ...
