@@ -1,6 +1,6 @@
 ; (function () {
-  var cashe = [];
-  window.cashingCalc = function (a, b, oper) {
+  var cache = [];
+  window.cachingCalc = function (a, b, oper) {
     a = Number(a);
     b = Number(b);
 
@@ -15,6 +15,9 @@
             throw new Error('TypeError: Devision by zero.');
           }
           return a / b;
+        default:
+          alert('TypeError: incorrect operator');
+          throw new Error('TypeError: incorrect operator.');
       }
     }
 
@@ -24,21 +27,22 @@
       oper: oper
     }
 
-    cashe.forEach(function (item) {
-      if (require.a === item.a && require.b === item.b && require.oper === item.oper) {
-        require.result = item.result;
+    for (var i = 0; i < cache.length; i += 1) {
+      if (require.a === cache[i].a && require.b === cache[i].b && require.oper === cache[i].oper) {
+        require.result = cache[i].result;
+        break;
       }
-    });
+    }
 
-    if (require.result) return 'Result from cashe: ' + require.result;
-    if (oper === '+' || oper === '-' || oper === '*' || oper === '/') {
+    if (require.result) return 'Result from cache: ' + require.result;
+    if (oper.length === 1) {
       require.result = simpleCalc(a, b, oper);
     } else {
       var customFunction = new Function('a', 'b', 'return ' + oper);
       require.result = customFunction(a, b);
     }
-    cashe.push(require);
-    return 'No in cashe. Result: ' + require.result;
+    cache.push(require);
+    return 'No in cache. Result: ' + require.result;
   }
 
 })();
