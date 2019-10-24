@@ -1,18 +1,52 @@
 ; (function () {
   function textFormatter(str, options) {
+    options.type = options.type || 'symbol';
+    var maxSize = parseInt(options.maxSize);
 
-    switch (options.type) {
-      case 'wordBrakes':
-        str = str.replace(/\s/g, '\n');
-        break;
-      case 'symbolBrakes':
-        str = str.replace(/./g, '$&\n');
-        break;
-      case 'sentenceBrakes': str = str.replace(/[\.?!]/g, '$&\n');
-    }
+    if (maxSize > 0 || maxSize === 0) {
+      var result = '';
+      var startSubStr = 0;
+      if (options.type === 'symbol') {
+        while (startSubStr < str.length) {
+          result += str.slice(startSubStr, startSubStr + maxSize) + '\n';
+          startSubStr += maxSize;
+        }
+      }
 
-    if (options.maxSize > 0 || options.maxSize === 0) {
-      str = str.substr(0, options.maxSize);
+      if (options.type === 'word') {
+        while (startSubStr < str.length) {
+          var subStr = str.slice(startSubStr, startSubStr + maxSize);
+          var lastSpace = subStr.lastIndexOf(' ');
+          if (lastSpace < 1) {
+            result += subStr + '\n';
+            startSubStr += maxSize;
+          } else {
+            result += subStr.slice(0, lastSpace) + '\n';
+            startSubStr += 1 + lastSpace;
+          }
+        }
+      }
+
+      if (options.type === 'sentence') {
+        while (startSubStr < str.length) {
+          subStr = str.slice(startSubStr, startSubStr + maxSize);
+          var lastSentenceEnd = Math.max(subStr.lastIndexOf('. '), subStr.lastIndexOf('! '), subStr.lastIndexOf('? '));
+          if (lastSentenceEnd < 1) {
+            lastSpace = subStr.lastIndexOf(' ');
+            if (lastSpace < 1) {
+              result += subStr + '\n';
+              startSubStr += maxSize;
+            } else {
+              result += subStr.slice(0, lastSpace) + '\n';
+              startSubStr += 1 + lastSpace;
+            }
+          } else {
+            result += subStr.slice(0, lastSentenceEnd + 1) + '\n';
+            startSubStr += 1 + lastSentenceEnd;
+          }
+        }
+      }
+      str = result;
     }
 
     if (options.maxStrings > 0) {
@@ -29,7 +63,6 @@
       str = '';
     }
 
-    // document.getElementById('txtFormRes').textContent = str;
     return str;
   }
 
