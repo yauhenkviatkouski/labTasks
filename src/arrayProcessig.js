@@ -1,14 +1,18 @@
 ; (function () {
   var arrayProcessig = {};
 
-  arrayProcessig.subSum_n2 = function (array) {
+  function getArrayFromJSON(array) {
     try {
       array = JSON.parse(array);
       if (!Array.isArray(array)) throw new Error;
+      return array;
     } catch (e) {
-      return "It isn't array of numbers!"
+      alert("It isn't array of numbers!")
     }
+  }
 
+  arrayProcessig.subSumN2 = function (array) {
+    array = getArrayFromJSON(array);
     var maxSubArray = 0;
     for (var i = 0; i < array.length; i += 1) {
       for (var j = i; j < array.length; j += 1) {
@@ -26,13 +30,7 @@
   }
 
   arrayProcessig.subSum_n = function (array) {
-    try {
-      array = JSON.parse(array);
-      if (!Array.isArray(array)) throw new Error;
-    } catch (e) {
-      return "It isn't array of numbers!"
-    }
-
+    array = getArrayFromJSON(array);
     var maxSubArray = 0;
     var accumulator = 0;
     for (var i = 0; i < array.length; i += 1) {
@@ -47,39 +45,21 @@
   }
 
   arrayProcessig.searchMin = function (array) {
-    try {
-      array = JSON.parse(array);
-      if (!Array.isArray(array)) throw new Error;
-    } catch (e) {
-      return "It isn't array of numbers!"
-    }
-
+    array = getArrayFromJSON(array);
     return array.reduce(function (previous, item) {
       return (item < previous) ? item : previous;
     });
   }
 
   arrayProcessig.searchMax = function (array) {
-    try {
-      array = JSON.parse(array);
-      if (!Array.isArray(array)) throw new Error;
-    } catch (e) {
-      return "It isn't array of numbers!"
-    }
-
+    array = getArrayFromJSON(array);
     return array.reduce(function (previous, item) {
       return (item > previous) ? item : previous;
     });
   }
 
   arrayProcessig.searchMedian = function (array) {
-    try {
-      array = JSON.parse(array);
-      if (!Array.isArray(array)) throw new Error;
-    } catch (e) {
-      return "It isn't array of numbers!"
-    }
-
+    array = getArrayFromJSON(array);
     function quickSort(arr) {
       if (arr.length === 0) return [];
       var leftPart = [];
@@ -97,12 +77,7 @@
   }
 
   arrayProcessig.selection = function (arr) {
-    try {
-      arr = JSON.parse(arr);
-      if (!Array.isArray(arr)) throw new Error;
-    } catch (e) {
-      return "It isn't array of numbers!"
-    }
+    arr = getArrayFromJSON(arr);
     var sequence = [arr[0]];
     var maxSeuence = sequence;
     for (var i = 1; i < arr.length; i += 1) {

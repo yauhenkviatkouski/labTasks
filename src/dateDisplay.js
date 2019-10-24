@@ -1,7 +1,7 @@
 ; (function () {
   var dateDisplay = {};
 
-  function _parser(str, inputScheme) {
+  function parser(str, inputScheme) {
     var components = {};
     var defaultScheme = (inputScheme) ? inputScheme : 'DDMMYYYY';
     components.day = str.substr([defaultScheme.indexOf('DD')], 2);
@@ -10,7 +10,7 @@
     return components;
   }
 
-  function _print(components, outputScheme) {
+  function print(components, outputScheme) {
     var defaultScheme = (outputScheme) ? outputScheme : 'DD-MM-YYYY';
     var result = defaultScheme.replace(/DD/, components.day);
     if (outputScheme.indexOf('MMMM') >= 0) {
@@ -25,8 +25,8 @@
 
 
   dateDisplay.formatStr = function (str, inputScheme, outputScheme) {
-    var components = _parser(str, inputScheme);
-    return _print(components, outputScheme);
+    var components = parser(str, inputScheme);
+    return print(components, outputScheme);
   }
 
   dateDisplay.formatMs = function (ms, outputScheme) {
@@ -38,11 +38,11 @@
     components.day = (day < 10) ? '0' + day : day;
     components.month = (month < 10) ? '0' + month : month;
     console.log(components)
-    return _print(components, outputScheme);
+    return print(components, outputScheme);
   }
 
   dateDisplay.fromNow = function (str, inputScheme) {
-    var components = _parser(str, inputScheme);
+    var components = parser(str, inputScheme);
     var date = new Date(components.year + '-' + components.month + '-' + components.day);
     var nowDate = new Date();
     var diffDays = (nowDate - date) / 1000 / 60 / 60 / 24;
