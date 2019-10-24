@@ -54,14 +54,13 @@
     var xhr = new XMLHttpRequest();
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + state.currentCity + ',by&APPID=63b5f0f7da4cdbc5f7ee9af7c7afbc96&lang=' + state.currentLang + '&units=' + state.currentUnits;
     xhr.open('GET', url);
-    xhr.send();
-    xhr.onload = function () {
-      if (xhr.status !== 200) {
-        alert('Something went wrong please reload the page');
-      } else {
-        drawWeather(JSON.parse(xhr.response));
-      }
+    xhr.onerror = function () {
+      alert('Something went wrong please reload the page');
     }
+    xhr.onload = function () {
+      drawWeather(JSON.parse(xhr.response));
+    }
+    xhr.send();
   }
 
 
@@ -71,13 +70,20 @@
     document.querySelector('.temp').textContent = data.temp[state.currentLang] + ': ' + response.main.temp + data.degrees[state.currentUnits];
     document.querySelector('.overcast').textContent = data.overcast[state.currentLang] + ': ' + response.weather[0].description;
 
-    var img = document.createElement("IMG");
+    var img = document.createElement("img");
     img.src = 'http://openweathermap.org/img/wn/' + response.weather[0].icon + '.png';
-    if (document.querySelector('.icon IMG')) document.querySelector('.icon').removeChild(document.querySelector('.icon img'));
-    document.querySelector('.icon').insertAdjacentElement('afterbegin', img);
+    var icon = document.querySelector('.icon');
+    if (document.querySelector('.icon img')) {
+      icon.removeChild(document.querySelector('.icon img'));
+    }
+    icon.insertAdjacentElement('afterbegin', img);
+    var cityList = document.querySelector('.cities__list').children;
+    for (i = 0; i < cityList.length; i += 1) {
+      cityList[i].textContent = data.cities[cityList[i].value][state.currentLang]
+    }
   }
 
-  window.weatherApi = function () {
+  weatherApi = function () {
     getWeather();
 
     document.querySelector('.language__list').addEventListener('change', function (event) {
@@ -91,6 +97,13 @@
       var value = event.target.value;
       if (value === state.currentCity) return;
       state.currentCity = value;
+      getWeather();
+    });
+
+    document.querySelector('.system__list').addEventListener('change', function (event) {
+      var value = event.target.value;
+      if (value === state.currentUnits) return;
+      state.currentUnits = value;
       getWeather();
     });
   }
