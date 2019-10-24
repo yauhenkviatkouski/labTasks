@@ -13,9 +13,10 @@ function bind() {
       args.push(arguments[key]);
     }
 
-    uniqID = '0110' + Math.random();
+    const UNIQUE_ID_PREFIX = '0110';
+    uniqID = UNIQUE_ID_PREFIX + Math.random();
     global[uniqID] = bindedFunc;
-    var result = eval("(global[uniqID])(" + args + ")");
+    var result = eval('(global[uniqID])(' + args + ')');
     delete global[uniqID];
 
     return result;
@@ -54,7 +55,7 @@ console.log(likeReduce(arr, sum, 0));
 function unfold(callback, stateValue) {
   var result = [];
   var resultOfCallback;
-  while (stateValue) {
+  while (stateValue !== false) {
     resultOfCallback = callback(stateValue);
     stateValue = resultOfCallback.nextStateValue;
     result.push(resultOfCallback.nextElemSequence);
@@ -65,8 +66,7 @@ function unfold(callback, stateValue) {
 function someRandoms(stateValue) {
   result = {};
   result.nextElemSequence = Math.round(Math.random() * 10);
-  result.nextStateValue = stateValue - 1;
-
+  result.nextStateValue = (stateValue - 1 !== 0) ? stateValue - 1 : false;
   return result;
 }
 console.log('output for Problem 4: Linear unfold: ')
@@ -131,16 +131,16 @@ console.log(likeFind(arr, ifEven));
 
 
 // Problem 11: Memoization ///////////////////////////////////////////
-function cashingFunc(f) {
-  var cashe = {};
+function cachingFunc(f) {
+  var cache = {};
   return function (x) {
-    if (cashe[x]) {
-      console.log('from cashe:' + cashe[x])
-      return cashe[x];
+    if (cache[x]) {
+      console.log('from cache:' + cache[x])
+      return cache[x];
     }
     else {
       var result = f(x);
-      cashe[x] = result;
+      cache[x] = result;
       console.log('calculated:' + result);
       return result;
     }
@@ -150,8 +150,8 @@ function cashingFunc(f) {
 function mult(x) {
   return x * x;
 }
-var ceshedMult = cashingFunc(mult);
+var cechedMult = cachingFunc(mult);
 
 console.log('output for Problem 11: Memoization: ');
-console.log(ceshedMult(5));
-console.log(ceshedMult(5));
+console.log(cechedMult(5));
+console.log(cechedMult(5));
