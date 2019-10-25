@@ -1,93 +1,102 @@
-const arrayProcessig = {};
-
-function getArrayFromJSON(array) {
-  try {
-    array = JSON.parse(array);
-    if (!Array.isArray(array)) throw new Error;
-    return array;
-  } catch (e) {
-    alert("It isn't array of numbers!")
+class ArrayProcessig {
+  getArrayFromJSON(arrayString) {
+    try {
+      const array = JSON.parse(arrayString);
+      if (!Array.isArray(array)) throw new Error;
+      return array;
+    } catch (e) {
+      alert('It isn\'t array of numbers!');
+    }
   }
-}
 
-arrayProcessig.subSumN2 = function (array) {
-  array = getArrayFromJSON(array);
-  var maxSubArray = 0;
-  for (var i = 0; i < array.length; i += 1) {
-    for (var j = i; j < array.length; j += 1) {
-      var subArray = array.slice(i, j + 1);
-      var subArrayValue = subArray.reduce(function (sum, current) {
-        return sum + current;
-      });
-      if (subArrayValue > maxSubArray) {
-        maxSubArray = subArrayValue;
+  subSumN2(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    let maxSubArray = 0;
+    for (let i = 0; i < array.length; i += 1) {
+      for (let j = i; j < array.length; j += 1) {
+        const subArray = array.slice(i, j + 1);
+        const subArrayValue = subArray.reduce((sum, current) => {
+          return sum + current;
+        });
+        if (subArrayValue > maxSubArray) {
+          maxSubArray = subArrayValue;
+        }
       }
     }
+    return maxSubArray;
   }
-  return maxSubArray;
-}
 
-arrayProcessig.subSum_n = function (array) {
-  array = getArrayFromJSON(array);
-  var maxSubArray = 0;
-  var accumulator = 0;
-  for (var i = 0; i < array.length; i += 1) {
-    accumulator = accumulator + array[i];
-    if (accumulator < 0) {
-      accumulator = 0;
-    } else if (accumulator > maxSubArray) {
-      maxSubArray = accumulator
+  subSumN(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    let maxSubArray = 0;
+    let accumulator = 0;
+    for (let i = 0; i < array.length; i += 1) {
+      accumulator = accumulator + array[i];
+      if (accumulator < 0) {
+        accumulator = 0;
+      } else if (accumulator > maxSubArray) {
+        maxSubArray = accumulator;
+      }
     }
+    return maxSubArray;
   }
-  return maxSubArray;
-}
 
-arrayProcessig.searchMin = function (array) {
-  array = getArrayFromJSON(array);
-  return array.reduce(function (previous, item) {
-    return (item < previous) ? item : previous;
-  });
-}
-
-arrayProcessig.searchMax = function (array) {
-  array = getArrayFromJSON(array);
-  return array.reduce(function (previous, item) {
-    return (item > previous) ? item : previous;
-  });
-}
-
-arrayProcessig.searchMedian = function (array) {
-  array = getArrayFromJSON(array);
-  function quickSort(arr) {
-    if (arr.length === 0) return [];
-    var leftPart = [];
-    var rightPart = [];
-    var base = arr[0];
-    for (var i = 1; i < arr.length; i += 1) {
-      if (arr[i] < base) leftPart.push(arr[i]);
-      else rightPart.push(arr[i]);
-    }
-    return quickSort(leftPart).concat(base, quickSort(rightPart));
+  searchMin(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    return array.reduce(function(previous, item) {
+      return (item < previous) ? item : previous;
+    });
   }
-  var sort = quickSort(array);
-  if (sort.length % 2 === 1) return sort[Math.floor(sort.length / 2)];
-  else return (sort[Math.floor(sort.length / 2 - 1)] + sort[Math.floor(sort.length / 2)]) / 2;
-}
 
-arrayProcessig.selection = function (arr) {
-  arr = getArrayFromJSON(arr);
-  var sequence = [arr[0]];
-  var maxSeuence = sequence;
-  for (var i = 1; i < arr.length; i += 1) {
-    if (arr[i] > arr[i - 1]) {
-      sequence.push(arr[i]);
-      if (maxSeuence.length < sequence.length) maxSeuence = sequence;
+  searchMax(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    return array.reduce(function(previous, item) {
+      return (item > previous) ? item : previous;
+    });
+  }
+
+  searchMedian(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    const quickSort = (arr) => {
+      if (arr.length === 0) return [];
+      const leftPart = [];
+      const rightPart = [];
+      const base = arr[0];
+      for (let i = 1; i < arr.length; i += 1) {
+        if (arr[i] < base) {
+          leftPart.push(arr[i]);
+        } else {
+          rightPart.push(arr[i]);
+        }
+      }
+      return quickSort(leftPart).concat(base, quickSort(rightPart));
+    };
+    const sort = quickSort(array);
+    const center = sort[Math.floor(sort.length / 2)];
+    if (sort.length % 2 === 1) {
+      return center;
     } else {
-      sequence = [arr[i]];
+      const centerLeft = sort[Math.floor(sort.length / 2 - 1)];
+      return (centerLeft + center) / 2;
     }
   }
-  return maxSeuence;
+
+  selection(arrayString) {
+    const array = this.getArrayFromJSON(arrayString);
+    let sequence = [array[0]];
+    let maxSequence = sequence;
+    for (let i = 1; i < array.length; i += 1) {
+      if (array[i] > array[i - 1]) {
+        sequence.push(array[i]);
+        if (maxSequence.length < sequence.length) {
+          maxSequence = sequence;
+        }
+      } else {
+        sequence = [array[i]];
+      }
+    }
+    return maxSequence;
+  }
 }
 
-
-export default arrayProcessig;
+export default ArrayProcessig;

@@ -10,13 +10,13 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 6
   },
+  "extends": ["eslint:recommended", "google"],
   "rules": {
-    "require-jsdoc": false
+    "require-jsdoc": 0,
   },
   "plugins": [
   ],
-  "extends": [
-    "eslint:recommended",
-    "google"
-  ]
+  "parserOptions": {
+    "sourceType": "module"
+  }
 };
