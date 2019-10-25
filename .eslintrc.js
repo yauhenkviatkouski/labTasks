@@ -1,22 +1,22 @@
 module.exports = {
   "env": {
     "browser": true,
-    "es6": false
+    "es6": true
   },
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 5
+    "ecmaVersion": 6
   },
   "rules": {
+    "require-jsdoc": false
   },
   "plugins": [
-    "es5"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:es5/no-es2015"
+    "google"
   ]
 };
