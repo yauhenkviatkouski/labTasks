@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<HEAD>
+  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+  <META NAME="CREATED" CONTENT="0;0">
+  <META NAME="CHANGED" CONTENT="0;0">
+  <STYLE TYPE="text/css">
+    <!--
+    @page {
+      size: 8.5in 11in;
+      margin-left: 1in;
+      margin-right: 1in;
+      margin-top: 0.5in;
+      margin-bottom: 0.5in
+    }
+
+    P {
+      margin-bottom: 0.08in;
+      direction: ltr;
+      widows: 2;
+      orphans: 2
+    }
+
+  </STYLE>
+  <link href="src/styles.css" rel="stylesheet">
+</HEAD>
+
+<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
+  <h3>Демонстрационная страница для задания *P2*:</h3>
+  <p class="subtitle">html код получен автоматически, из файла задания в формате *.docx</p>
+  <P STYLE="margin-bottom: 0in"><B>Все задания требуют
+      подготовки демонстрационной страницы,
+      на которой будут представлены все
+      возможные варианты использования
+      функционала согласно задания. - [простыми
+      словами - продемонстрировать работу
+      всех реализованных функций]</B></P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Array Processing Tool</B></P>
+      <OL TYPE=a>
+        <LI>
+          <P STYLE="margin-bottom: 0in"><B>Sub Sum</B></P>
+      </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">На входе
+    массив чисел, например: arr = [1, -2, 3, 4, -9,
+    6].</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Задача —
+    найти непрерывный подмассив arr, сумма
+    элементов которого максимальна. Функция
+    должна возвращать только эту сумму.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Например:</P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, <U><B>2, 3</B></U>,
+        -9]) = 5</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>2, -1, 2, 3</B></U>,
+        -9]) = 6</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, 2, 3, -9, <U><B>11</B></U>])
+        = 11
+      </P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-2, -1, <U><B>1, 2</B></U>])
+        = 3</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>100</B></U>,
+        -9, 2, -3, 5]) = 100</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([<U><B>1, 2, 3</B></U>])
+        = 6</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">getMaxSubSum([-1, -2, -3]) = 0</P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать два
+    решения, сложность O(n<SUP>2</SUP>) и O(n). </P>
+  <div class="result">
+    <p>сложность O(n<SUP>2</SUP>):</p>
+    <form onSubmit="alert(arrayProcessig.subSumN2(document.querySelector('#field').value)); return false">
+      <input id="field" type="text" value="[-2, -1, 1, 2]">
+      <input type="submit" value="check function">
+    </form>
+    <p>сложность O(n):</p>
+    <form onSubmit="alert(arrayProcessig.subSum_n(document.querySelector('#field2').value)); return false">
+      <input id="field2" type="text" value="[100,-9, 2, -3, 5]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <OL>
+    <OL TYPE=a START=2>
+      <LI>
+        <P STYLE="margin-bottom: 0in"><B>Search</B></P>
+    </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал поиска минимального,
+    максимального, медианного значения в
+    массиве.</P>
+  <div class="result">
+    <p>Минимальное:</p>
+    <form onSubmit="alert(arrayProcessig.searchMin(document.querySelector('#field3').value)); return false">
+      <input id="field3" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+    <p>Максимальное:</p>
+    <form onSubmit="alert(arrayProcessig.searchMax(document.querySelector('#field4').value)); return false">
+      <input id="field4" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+    <p>Медианное:</p>
+    <form onSubmit="alert(arrayProcessig.searchMedian(document.querySelector('#field5').value)); return false">
+      <input id="field5" type="text" value="[2, -1, 2, 3,-9]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <OL>
+    <OL TYPE=a START=3>
+      <LI>
+        <P STYLE="margin-bottom: 0in"><B>Selection Task</B></P>
+    </OL>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал поиска возрастающей
+    последовательности максимальной длины
+    в исходном массиве.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Например: 1,
+    3, 7, 4, 6, 7, 8, <U><B>1, 2, 5, 7, 8, 90</B></U>, 1</P>
+  <div class="result">
+
+    <form onSubmit="alert(arrayProcessig.selection(document.querySelector('#field6').value)); return false">
+      <input id="field6" type="text" value="[1, 3, 7, 4, 6, 7, 8, 1, 2, 5, 7, 8, 90, 1]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"> Все функции обернуть
+    в один объект для обработки массивов.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <OL START=2>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Date Display Formatter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект для форматирования дат (объект
+    содержащий набор функций). Объект должен
+    позволять обрабатывать входные данные
+    в виде строки или в виде числа (ticks, ms).
+    Объект должен поддерживать возможность
+    передачи внутрь регулярного выражения
+    для разбора исходной строки и построения
+    выходной строки.</P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 0.5in; text-indent: 0.5in; margin-bottom: 0in">
+    Например:</P>
+  <OL>
+    <LI>
+      <P STYLE="margin-bottom: 0in">“31102011” =&gt; “31-10-2011”</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">“31102011” =&gt; “31 October
+        2011”</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“20130431”, “YYYYMMDD”)
+        =&gt; 31 April 2013</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“20130431”, “YYYYMMDD”,
+        “MM-DD-YYYY”) =&gt; 04-31-2013</P>
+    <LI>
+      <P STYLE="margin-bottom: 0in">(“2013-04-31”,
+        “YYYY-MM-DD”).fromNow() =&gt; 2 years ago</P>
+  </OL>
+  <P STYLE="margin-bottom: 0in"> </P>
+  <P STYLE="margin-bottom: 0in"> Реализовать как можно
+    больше прикладных конверсий.</P>
+
+  <div class="result">
+    <form
+      onSubmit="alert(dateDisplay.formatStr(document.querySelector('#fisrtArg').value, document.querySelector('#secondArg').value, document.querySelector('#thirdArg').value)); return false">
+      <p>дата в формате строки</p>
+      <input id="fisrtArg" label="asd" type="text" value="2011 08 05">
+      <p>regEx для разбора строки (опционально, по умолчанию DDMMYYYY)</p>
+      <input id="secondArg" type="text" value="YYYY MM DD">
+      <p>regEx для построения выходной строки (опционально, формат:YYYY MM/MMMM DD )</p>
+      <input id="thirdArg" type="text" value="DD__MM____YYYY">
+      <input type="submit" value="check function">
+    </form>
+    <br>
+    <br>
+
+    <form
+      onSubmit="alert(dateDisplay.formatMs(document.querySelector('#ms').value, document.querySelector('#output').value)); return false">
+      <p>дата в формате миллисекунд</p>
+      <input id="ms" label="asd" type="text" value="1571669729826">
+      <p>regEx для построения выходной строки (опционально, формат: YYYY MM/MMMM DD )</p>
+      <input id="output" type="text" value="year: YYYY, month: MMMM, day: DD">
+      <input type="submit" value="check function">
+    </form>
+    <br>
+    <br>
+    <form
+      onSubmit="alert(dateDisplay.fromNow(document.querySelector('#fromNow').value, document.querySelector('#input_fromNow').value)); return false">
+      <p>дата в формате строки для функции "fromNow()"</p>
+      <input id="fromNow" label="asd" type="text" value="2017 10 15">
+      <p>regEx для разбора строки (опционально, по умолчанию DDMMYYYY)</p>
+      <input id="input_fromNow" type="text" value="YYYY MM DD">
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=3>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Text Formatter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функцию обработчика входного текста.
+    Функция должна принимать на вход строку,
+    максимальный размер строки (опционально),
+    максимальное количество строк
+    (опционально), тип форматирования
+    (“перенос по слову”, “перенос по
+    символу”, “перенос по предложению”,
+    “переносов нет” - опционально).</P>
+    <div class="result">
+      <form onSubmit="alert(textFormatter(document.querySelector('#textInput').value, {maxSize: document.querySelector('#maxSize').value, maxStrings: document.querySelector('#maxStrings').value, type: document.querySelector('#type').value})); return false">
+        строка на вход:
+        <textarea
+          id="textInput">Задача. Написать функцию обработчика входного текста. Функция должна принимать на вход строку, максимальный размер строки (опционально). Максимальное количество строк (опционально). Тип форматирования (“перенос по слову”, “перенос посимволу”, “перенос по предложению”, “переносов нет” - опционально).</textarea>
+          <br>
+          options.maxSize:
+          <input id="maxSize" type="text">
+          <br>
+          options.maxStrings:
+          <input id="maxStrings" type="text">
+          <br>
+          options.typeFormat: symbol(default), word, sentence:
+          <input id="type" type="text" value="word">
+        <input type="submit" value="check function">
+      </form>
+      <p id='txtFormRes'></p>
+    </div>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <OL START=4>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>String calculator</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект содержащий набор методов для
+    выполнения функций калькулятора над
+    числами передаваемыми в строковом
+    представлении. Методы должны позволять
+    работать как в целочисленном, так и
+    вещественном формате.</P>
+  <div class="result">
+    <form onSubmit="alert(stringCalculator(document.querySelector('#exp').value)); return false">
+      <p>выражение для вычисления (любые арифметические операции, допускаются пробелы вложенность скобок)</p>
+      <textarea
+        id="exp">(6+      28+18-((61  +   17*64*98)*(61/53*47/36*98)+82+(69-55/(62*77/88-52/10)-42-(48/84*77+40-13))))-4/99</textarea>
+
+      <input type="submit" value="check function">
+    </form>
+  </div>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=5>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Array Sorter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Разработать
+    объект сортировщик, позволяющий
+    производить сортировки целочисленных
+    массивов не менее чем 4 способами.</P>
+    <div class="result">
+      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickUp').value)); return false">
+        <p>array for quickSort up</p>
+        <input id="quickUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickDown').value, true)); return false">
+        <p>array for quickSort down</p>
+        <input id="quickDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectUp').value)); return false">
+        <p>array for selectionSort up</p>
+        <input id="selectUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectDown').value, true)); return false">
+        <p>array for selectionSort down</p>
+        <input id="selectDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertUp').value)); return false">
+        <p>array for insertionSort up</p>
+        <input id="insertUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertDown').value, true)); return false">
+        <p>array for insertionSort down</p>
+        <input id="insertDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardUp').value)); return false">
+        <p>array for standardSort up</p>
+        <input id="standardUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardDown').value, true)); return false">
+        <p>array for standardSort down</p>
+        <input id="standardDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+        <input type="submit" value="check function">
+      </form>
+    </div>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <OL START=6>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>Binary Converter</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Создать объект
+    позволяющий производить конвертацию
+    чисел из двоичной системы исчисления
+    в десятеричную и обратно. Числа
+    представлены в виде векторов (массивов
+    чисел, где индекс является разрядом).</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
+    создать функции для перевода из любой
+    системы в любую.</P>
+    <div class="result">
+        <form onSubmit="alert(convertNum(document.querySelector('#numberVector').value, document.querySelector('#inputBase').value, document.querySelector('#outputBase').value )); return false">
+            Число в виде вектора (массивов чисел, где индекс является разрядом)
+            <input id="numberVector" type="text" value="[2,0,1,9]">
+            <br>
+            inputBase:
+            <input id="inputBase" type="text" value="10">
+            <br>
+            outputBase:
+            <input id="outputBase" type="text" value="16">
+          <input type="submit" value="check function">
+        </form>
+      </div>
+
+
+
+
+  <P STYLE="margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 0.5in; text-indent: 0.5in; margin-bottom: 0in">
+    <BR>
+  </P>
+  <OL START=7>
+    <LI>
+      <P STYLE="margin-bottom: 0in"><B>* Caching calculator</B></P>
+  </OL>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Написать
+    функционал позволяющий производить
+    операции над двумя числами и кэширование
+    результата выполнения операции так,
+    чтобы при повторном вызове функционала
+    с теми же параметрами взялось закэшированное
+    значение и не производилось перевычисление
+    результата. Функционал обернуть в объект
+    и сделать демонстрационную страницу
+    для тестирования функционала.</P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
+  </P>
+  <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
+    создать функционал регистрации кэшируемых
+    функций, который позволит указывать
+    кэшируемые функции и настройки кэша.
+    Продемонстрировать подключение
+    кэширования нескольких функций и
+    использование кэшируемых результатов
+    этих функций.</P>
+
+    <div class="result">
+        <form onSubmit="alert(cachingCalc(document.querySelector('#operA').value, document.querySelector('#operB').value, document.querySelector('#operation').value )); return false">
+            a:
+            <input id="operA" type="text" value="3">
+            <br>
+            b:
+            <input id="operB" type="text" value="100">
+            <br>
+            Any operation with a & b:
+            <input id="operation" type="text" value="a * b + a">
+          <input type="submit" value="check function">
+        </form>
+      </div>
+  <DIV TYPE=FOOTER>
+    <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <COL WIDTH=194>
+      <TR VALIGN=TOP>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=LEFT STYLE="margin-left: -0.08in"><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=CENTER><BR>
+          </P>
+        </TD>
+        <TD WIDTH=194 STYLE="border: none; padding: 0in">
+          <P ALIGN=RIGHT STYLE="margin-right: -0.08in"><BR>
+          </P>
+        </TD>
+      </TR>
+    </TABLE>
+    <P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
+    </P>
+  </DIV>
+  <script src="src/arrayProcessig.js"></script>
+  <script src="src/dateDisplay.js"></script>
+  <script src="src/stringCalculator.js"></script>
+  <script src="src/arraySorter.js"></script>
+  <script src="src/textFormatter.js"></script>
+  <script src="src/convertNum.js"></script>
+  <script src="src/cachingCalculator.js"></script>
+</BODY>
+
+</HTML>

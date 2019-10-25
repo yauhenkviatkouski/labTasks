@@ -1,0 +1,44 @@
+body {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 8px;
+  box-shadow: 0px 0px 69px -12px rgba(0,0,0,0.75);
+}
+
+.subtitle {
+  font-size: 12px;
+}
+
+.result {
+  padding: 8px 30px;
+  margin-bottom: 45px;
+  background-color: rgb(207, 206, 206);
+  border-bottom: 1px black solid;
+}
+
+.result:before {
+  content: 'Результат:';
+  display: block;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.result form input[type='text'] {
+  display: block;
+  width: 60%;
+}
+
+.result form input[type='submit'] {
+  width: 20%;
+}
+
+.result form p {
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+textarea {
+  display: block;
+  width: 60%;
+  height: 90px;
+}
