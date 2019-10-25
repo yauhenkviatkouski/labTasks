@@ -11,7 +11,6 @@
   <META NAME="CREATED" CONTENT="0;0">
   <META NAME="CHANGED" CONTENT="0;0">
   <STYLE TYPE="text/css">
-    <!--
     @page {
       size: 8.5in 11in;
       margin-left: 1in;
@@ -26,7 +25,6 @@
       widows: 2;
       orphans: 2
     }
-
   </STYLE>
   <link href="src/styles.css" rel="stylesheet">
 </HEAD>
@@ -90,8 +88,8 @@
     решения, сложность O(n<SUP>2</SUP>) и O(n). </P>
   <div class="result">
     <p>сложность O(n<SUP>2</SUP>):</p>
-    <form onSubmit="alert(arrayProcessig.subSumN2(document.querySelector('#field').value)); return false">
-      <input id="field" type="text" value="[-2, -1, 1, 2]">
+    <form id="subSumN2">
+      <input id="subSumN2-field" type="text" value="[-2, -1, 1, 2]">
       <input type="submit" value="check function">
     </form>
     <p>сложность O(n):</p>
@@ -239,24 +237,25 @@
     (“перенос по слову”, “перенос по
     символу”, “перенос по предложению”,
     “переносов нет” - опционально).</P>
-    <div class="result">
-      <form onSubmit="alert(textFormatter(document.querySelector('#textInput').value, {maxSize: document.querySelector('#maxSize').value, maxStrings: document.querySelector('#maxStrings').value, type: document.querySelector('#type').value})); return false">
-        строка на вход:
-        <textarea
-          id="textInput">Задача. Написать функцию обработчика входного текста. Функция должна принимать на вход строку, максимальный размер строки (опционально). Максимальное количество строк (опционально). Тип форматирования (“перенос по слову”, “перенос посимволу”, “перенос по предложению”, “переносов нет” - опционально).</textarea>
-          <br>
-          options.maxSize:
-          <input id="maxSize" type="text">
-          <br>
-          options.maxStrings:
-          <input id="maxStrings" type="text">
-          <br>
-          options.typeFormat: symbol(default), word, sentence:
-          <input id="type" type="text" value="word">
-        <input type="submit" value="check function">
-      </form>
-      <p id='txtFormRes'></p>
-    </div>
+  <div class="result">
+    <form
+      onSubmit="alert(textFormatter(document.querySelector('#textInput').value, {maxSize: document.querySelector('#maxSize').value, maxStrings: document.querySelector('#maxStrings').value, type: document.querySelector('#type').value})); return false">
+      строка на вход:
+      <textarea
+        id="textInput">Задача. Написать функцию обработчика входного текста. Функция должна принимать на вход строку, максимальный размер строки (опционально). Максимальное количество строк (опционально). Тип форматирования (“перенос по слову”, “перенос посимволу”, “перенос по предложению”, “переносов нет” - опционально).</textarea>
+      <br>
+      options.maxSize:
+      <input id="maxSize" type="text">
+      <br>
+      options.maxStrings:
+      <input id="maxStrings" type="text">
+      <br>
+      options.typeFormat: symbol(default), word, sentence:
+      <input id="type" type="text" value="word">
+      <input type="submit" value="check function">
+    </form>
+    <p id='txtFormRes'></p>
+  </div>
   <P STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
   </P>
   <OL START=4>
@@ -291,48 +290,48 @@
     объект сортировщик, позволяющий
     производить сортировки целочисленных
     массивов не менее чем 4 способами.</P>
-    <div class="result">
-      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickUp').value)); return false">
-        <p>array for quickSort up</p>
-        <input id="quickUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickDown').value, true)); return false">
-        <p>array for quickSort down</p>
-        <input id="quickDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectUp').value)); return false">
-        <p>array for selectionSort up</p>
-        <input id="selectUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectDown').value, true)); return false">
-        <p>array for selectionSort down</p>
-        <input id="selectDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertUp').value)); return false">
-        <p>array for insertionSort up</p>
-        <input id="insertUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertDown').value, true)); return false">
-        <p>array for insertionSort down</p>
-        <input id="insertDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardUp').value)); return false">
-        <p>array for standardSort up</p>
-        <input id="standardUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-      <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardDown').value, true)); return false">
-        <p>array for standardSort down</p>
-        <input id="standardDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
-        <input type="submit" value="check function">
-      </form>
-    </div>
+  <div class="result">
+    <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickUp').value)); return false">
+      <p>array for quickSort up</p>
+      <input id="quickUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.quick(document.querySelector('#quickDown').value, true)); return false">
+      <p>array for quickSort down</p>
+      <input id="quickDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectUp').value)); return false">
+      <p>array for selectionSort up</p>
+      <input id="selectUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.selection(document.querySelector('#selectDown').value, true)); return false">
+      <p>array for selectionSort down</p>
+      <input id="selectDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertUp').value)); return false">
+      <p>array for insertionSort up</p>
+      <input id="insertUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.insertion(document.querySelector('#insertDown').value, true)); return false">
+      <p>array for insertionSort down</p>
+      <input id="insertDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardUp').value)); return false">
+      <p>array for standardSort up</p>
+      <input id="standardUp" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+    <form onSubmit="alert(arraySorter.standard(document.querySelector('#standardDown').value, true)); return false">
+      <p>array for standardSort down</p>
+      <input id="standardDown" type="text" value="[2, -1, 2, 3, 7, 4, 5, 8, 9, 21, 6, 8, 4, 54, 232, 121, 41, 8]">
+      <input type="submit" value="check function">
+    </form>
+  </div>
   <P STYLE="margin-bottom: 0in"><BR>
   </P>
   <P STYLE="margin-bottom: 0in"><BR>
@@ -352,19 +351,20 @@
   <P STYLE="margin-left: 1in; margin-bottom: 0in">Дополнительно:
     создать функции для перевода из любой
     системы в любую.</P>
-    <div class="result">
-        <form onSubmit="alert(convertNum(document.querySelector('#numberVector').value, document.querySelector('#inputBase').value, document.querySelector('#outputBase').value )); return false">
-            Число в виде вектора (массивов чисел, где индекс является разрядом)
-            <input id="numberVector" type="text" value="[2,0,1,9]">
-            <br>
-            inputBase:
-            <input id="inputBase" type="text" value="10">
-            <br>
-            outputBase:
-            <input id="outputBase" type="text" value="16">
-          <input type="submit" value="check function">
-        </form>
-      </div>
+  <div class="result">
+    <form
+      onSubmit="alert(convertNum(document.querySelector('#numberVector').value, document.querySelector('#inputBase').value, document.querySelector('#outputBase').value )); return false">
+      Число в виде вектора (массивов чисел, где индекс является разрядом)
+      <input id="numberVector" type="text" value="[2,0,1,9]">
+      <br>
+      inputBase:
+      <input id="inputBase" type="text" value="10">
+      <br>
+      outputBase:
+      <input id="outputBase" type="text" value="16">
+      <input type="submit" value="check function">
+    </form>
+  </div>
 
 
 
@@ -401,19 +401,20 @@
     использование кэшируемых результатов
     этих функций.</P>
 
-    <div class="result">
-        <form onSubmit="alert(cachingCalc(document.querySelector('#operA').value, document.querySelector('#operB').value, document.querySelector('#operation').value )); return false">
-            a:
-            <input id="operA" type="text" value="3">
-            <br>
-            b:
-            <input id="operB" type="text" value="100">
-            <br>
-            Any operation with a & b:
-            <input id="operation" type="text" value="a * b + a">
-          <input type="submit" value="check function">
-        </form>
-      </div>
+  <div class="result">
+    <form
+      onSubmit="alert(cachingCalc(document.querySelector('#operA').value, document.querySelector('#operB').value, document.querySelector('#operation').value )); return false">
+      a:
+      <input id="operA" type="text" value="3">
+      <br>
+      b:
+      <input id="operB" type="text" value="100">
+      <br>
+      Any operation with a & b:
+      <input id="operation" type="text" value="a * b + a">
+      <input type="submit" value="check function">
+    </form>
+  </div>
   <DIV TYPE=FOOTER>
     <TABLE WIDTH=624 CELLPADDING=7 CELLSPACING=0>
       <COL WIDTH=194>
@@ -437,13 +438,7 @@
     <P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
     </P>
   </DIV>
-  <script src="src/arrayProcessig.js"></script>
-  <script src="src/dateDisplay.js"></script>
-  <script src="src/stringCalculator.js"></script>
-  <script src="src/arraySorter.js"></script>
-  <script src="src/textFormatter.js"></script>
-  <script src="src/convertNum.js"></script>
-  <script src="src/cachingCalculator.js"></script>
+
 </BODY>
 
 </HTML>
