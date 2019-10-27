@@ -1,4 +1,3 @@
-import './styles.css';
 import ArrayProcessig from './arrayProcessig';
 import DateDisplay from './dateDisplay';
 import TextFormatter from './textFormatter';

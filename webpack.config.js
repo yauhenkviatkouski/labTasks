@@ -1,12 +1,13 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: "source-map",
   mode: 'development',
   entry: {
     './p2-0/src/index.js': './p2-0/src/index.js',
-    // './p2-1/index.js': './p2-1/src/index.js',
+    './p2-1/src/index.js': './p2-1/src/index.js',
     // './p2-2/index.js': './p2-2/index.js',
   },
   output: {
@@ -30,11 +31,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './p2-0/index.html',
       filename: 'p2-0/index.html',
-
     }),
+    new HtmlWebpackPlugin({
+      template: './p2-1/index.html',
+      filename: 'p2-1/index.html',
+    }),
+    new CopyPlugin([
+      { from: './p2-0/src/styles', to: 'p2-0/src/styles' },
+      { from: './p2-1/src/styles', to: 'p2-1/src/styles' },
+    ]),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist/p2-0/'),
+    contentBase: path.join(__dirname, 'dist/p2-1/'),
     compress: true,
     port: 9000
   },
