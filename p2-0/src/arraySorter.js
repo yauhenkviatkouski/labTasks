@@ -1,17 +1,20 @@
-; (function() {
-  const arraySorter = {};
-  function isArray(arr) {
+export default class ArraySorter {
+  isArray(arr) {
     try {
-      if (!Array.isArray(JSON.parse(arr))) throw new Error;
+      if (!Array.isArray(JSON.parse(arr))) {
+        throw new Error;
+      }
       return true;
     } catch (e) {
       return false;
     }
   }
 
-  arraySorter.quick = function quick(arr, down) {
+  quick(arr, down) {
     if (!Array.isArray(arr)) {
-      if (!isArray(arr)) return 'It isn\'t array of numbers!';
+      if (!this.isArray(arr)) {
+        return 'It isn\'t array of numbers!';
+      }
       arr = JSON.parse(arr);
     }
 
@@ -20,22 +23,30 @@
     const rightPart = [];
     const base = arr[0];
     if (down) {
-      for (var i = 1; i < arr.length; i += 1) {
-        if (arr[i] > base) leftPart.push(arr[i]);
-        else rightPart.push(arr[i]);
+      for (let i = 1; i < arr.length; i += 1) {
+        if (arr[i] > base) {
+          leftPart.push(arr[i]);
+        } else {
+          rightPart.push(arr[i]);
+        }
       }
     } else {
-      for (i = 1; i < arr.length; i += 1) {
-        if (arr[i] < base) leftPart.push(arr[i]);
-        else rightPart.push(arr[i]);
+      for (let i = 1; i < arr.length; i += 1) {
+        if (arr[i] < base) {
+          leftPart.push(arr[i]);
+        } else {
+          rightPart.push(arr[i]);
+        }
       }
     }
-    return quick(leftPart, down).concat(base, quick(rightPart, down));
-  };
+    return this.quick(leftPart, down).concat(base, this.quick(rightPart, down));
+  }
 
-  arraySorter.selection = function(arr, down) {
+  selection(arr, down) {
     if (!Array.isArray(arr)) {
-      if (!isArray(arr)) return 'It isn\'t array of numbers!';
+      if (!this.isArray(arr)) {
+        return 'It isn\'t array of numbers!';
+      }
       arr = JSON.parse(arr);
     }
 
@@ -43,9 +54,11 @@
       let min = i;
       for (let j = i + 1; j < arr.length; j += 1) {
         if (down === true) {
-          if (arr[j] > arr[min]) min = j;
-        } else {
-          if (arr[j] < arr[min]) min = j;
+          if (arr[j] > arr[min]) {
+            min = j;
+          }
+        } else if (arr[j] < arr[min]) {
+          min = j;
         }
       }
       const t = arr[min];
@@ -53,11 +66,11 @@
       arr[i] = t;
     }
     return arr;
-  };
+  }
 
-  arraySorter.insertion = function(arr, down) {
+  insertion(arr, down) {
     if (!Array.isArray(arr)) {
-      if (!isArray(arr)) return 'It isn\'t array of numbers!';
+      if (!this.isArray(arr)) return 'It isn\'t array of numbers!';
       arr = JSON.parse(arr);
     }
 
@@ -78,11 +91,11 @@
       arr[j + 1] = t;
     }
     return arr;
-  };
+  }
 
-  arraySorter.standard = function(arr, down) {
+  standard(arr, down) {
     if (!Array.isArray(arr)) {
-      if (!isArray(arr)) return 'It isn\'t array of numbers!';
+      if (!this.isArray(arr)) return 'It isn\'t array of numbers!';
       arr = JSON.parse(arr);
     }
 
@@ -95,9 +108,6 @@
         return a - b;
       });
     }
-
     return arr;
-  };
-
-  window.arraySorter = arraySorter;
-})();
+  }
+}

@@ -1,6 +1,9 @@
-; (function () {
-  var cache = [];
-  window.cachingCalc = function (a, b, oper) {
+export default class CachingCalc {
+  constructor() {
+    this.cache = [];
+  }
+
+  calculate(a, b, oper) {
     a = Number(a);
     b = Number(b);
 
@@ -21,15 +24,17 @@
       }
     }
 
-    var require = {
+    const require = {
       a: a,
       b: b,
-      oper: oper
-    }
+      oper: oper,
+    };
 
-    for (var i = 0; i < cache.length; i += 1) {
-      if (require.a === cache[i].a && require.b === cache[i].b && require.oper === cache[i].oper) {
-        require.result = cache[i].result;
+    for (let i = 0; i < this.cache.length; i += 1) {
+      if (require.a === this.cache[i].a &&
+        require.b === this.cache[i].b &&
+        require.oper === this.cache[i].oper) {
+        require.result = this.cache[i].result;
         break;
       }
     }
@@ -38,11 +43,10 @@
     if (oper.length === 1) {
       require.result = simpleCalc(a, b, oper);
     } else {
-      var customFunction = new Function('a', 'b', 'return ' + oper);
+      const customFunction = new Function('a', 'b', 'return ' + oper);
       require.result = customFunction(a, b);
     }
-    cache.push(require);
+    this.cache.push(require);
     return 'No in cache. Result: ' + require.result;
   }
-
-})();
+}

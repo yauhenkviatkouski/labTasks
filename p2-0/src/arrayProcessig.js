@@ -1,4 +1,4 @@
-class ArrayProcessig {
+export default class ArrayProcessig {
   getArrayFromJSON(arrayString) {
     try {
       const array = JSON.parse(arrayString);
@@ -43,14 +43,14 @@ class ArrayProcessig {
 
   searchMin(arrayString) {
     const array = this.getArrayFromJSON(arrayString);
-    return array.reduce(function(previous, item) {
+    return array.reduce((previous, item) => {
       return (item < previous) ? item : previous;
     });
   }
 
   searchMax(arrayString) {
     const array = this.getArrayFromJSON(arrayString);
-    return array.reduce(function(previous, item) {
+    return array.reduce((previous, item) => {
       return (item > previous) ? item : previous;
     });
   }
@@ -99,4 +99,4 @@ class ArrayProcessig {
   }
 }
 
-export default ArrayProcessig;
+// export default ArrayProcessig;

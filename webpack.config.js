@@ -2,6 +2,7 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: "source-map",
   mode: 'development',
   entry: {
     './p2-0/src/index.js': './p2-0/src/index.js',
@@ -33,7 +34,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist/p2-0'),
+    contentBase: path.join(__dirname, 'dist/p2-0/'),
     compress: true,
     port: 9000
   },

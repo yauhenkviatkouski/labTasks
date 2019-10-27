@@ -30,6 +30,7 @@ body {
 
 .result form input[type='submit'] {
   width: 20%;
+  min-width: 130px;
 }
 
 .result form p {
