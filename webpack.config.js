@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     './p2-0/src/index.js': './p2-0/src/index.js',
     './p2-1/src/index.js': './p2-1/src/index.js',
-    // './p2-2/index.js': './p2-2/index.js',
+    './p2-2/index.js': './p2-2/index.js',
   },
   output: {
     filename: './[name]',
@@ -31,10 +31,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './p2-0/index.html',
       filename: 'p2-0/index.html',
+      inject: false
     }),
     new HtmlWebpackPlugin({
       template: './p2-1/index.html',
       filename: 'p2-1/index.html',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      template: './p2-2/index.html',
+      filename: 'p2-2/index.html',
+      inject: false
     }),
     new CopyPlugin([
       { from: './p2-0/src/styles', to: 'p2-0/src/styles' },
