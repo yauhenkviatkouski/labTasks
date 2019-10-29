@@ -1,3 +1,5 @@
+import CachingCalc from './cachingCalculator';
+
 export default class StringCalc {
   calculate(expr) {
     const check = (str) => {
@@ -27,14 +29,7 @@ export default class StringCalc {
       const operation = exprShort.match(/[-+*/]/)[0];
       exprShort = exprShort.replace(/[-+*/]/, ' ');
       const operandB = Number(exprShort.match(/-?\d+\.*\d*/g)[0]);
-      switch (operation) {
-        case '+': return operandA + operandB;
-        case '-': return operandA - operandB;
-        case '*': return operandA * operandB;
-        case '/':
-          if (operandB === 0) alert('TypeError: Devision by zero.');
-          return operandA / operandB;
-      }
+      return CachingCalc.simpleCalc(operandA, operandB, operation);
     };
     const operManySolve = (exprLong) => {
       while (

@@ -1,4 +1,23 @@
 export default class TextFormatter {
+  cutMaxStrings(str, maxStrings) {
+    if (maxStrings > 0) {
+      const posOfBreaks = [];
+      let pos = 0;
+      for (; ;) {
+        const foundPos = str.indexOf('\n', pos);
+        if (foundPos === -1) {
+          break;
+        }
+        posOfBreaks.push(foundPos);
+        pos = foundPos + 1;
+      }
+      str = str.substring(0, posOfBreaks[maxStrings - 1]);
+    } else if (maxStrings === 0) {
+      str = '';
+    }
+    return str;
+  }
+
   format(str, options) {
     options.type = options.type || 'symbol';
     const maxSize = parseInt(options.maxSize);
@@ -18,19 +37,21 @@ export default class TextFormatter {
       };
 
       switch (options.type) {
-        case 'symbol':
+        case 'symbol': {
           while (startSubStr < str.length) {
             result += str.slice(startSubStr, startSubStr + maxSize) + '\n';
             startSubStr += maxSize;
           }
           break;
-        case 'word':
+        }
+        case 'word': {
           while (startSubStr < str.length) {
             const subStr = str.slice(startSubStr, startSubStr + maxSize);
             cutLastSpace(subStr);
           }
           break;
-        case 'sentence':
+        }
+        case 'sentence': {
           while (startSubStr < str.length) {
             const subStr = str.slice(startSubStr, startSubStr + maxSize);
             const lastSentenceEnd = Math.max(
@@ -46,32 +67,15 @@ export default class TextFormatter {
             }
           }
           break;
-        default:
+        }
+        default: {
           break;
+        }
       }
       str = result;
     }
 
-    const cutMaxStrings = (str, maxStrings) => {
-      if (maxStrings > 0) {
-        const posOfBreaks = [];
-        let pos = 0;
-        for (; ;) {
-          const foundPos = str.indexOf('\n', pos);
-          if (foundPos === -1) {
-            break;
-          }
-          posOfBreaks.push(foundPos);
-          pos = foundPos + 1;
-        }
-        str = str.substring(0, posOfBreaks[maxStrings - 1]);
-      } else if (maxStrings === 0) {
-        str = '';
-      }
-      return str;
-    };
-
-    return cutMaxStrings(str, options.maxStrings);
+    return this.cutMaxStrings(str, options.maxStrings);
   }
 }
 
