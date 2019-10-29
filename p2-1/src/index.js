@@ -53,21 +53,23 @@ class WeatherApi {
   }
 
   getWeather() {
-    const xhr = new XMLHttpRequest();
     const url = 'http://api.openweathermap.org/data/2.5/weather?q=' +
       this.state.currentCity +
       ',by&APPID=63b5f0f7da4cdbc5f7ee9af7c7afbc96&lang=' +
       this.state.currentLang +
       '&units=' +
       this.state.currentUnits;
-    xhr.open('GET', url);
-    xhr.onerror = () => {
-      alert('Something went wrong please reload the page');
-    };
-    xhr.onload = () => {
-      this.drawWeather(JSON.parse(xhr.response));
-    };
-    xhr.send();
+
+    fetch(url)
+        .then((response) => {
+          if (response.status !== 200) {
+            alert('Something went wrong please reload the page');
+            return;
+          } else {
+            return response.json();
+          }
+        })
+        .then((response) => this.drawWeather(response));
   }
 
   drawWeather(response) {

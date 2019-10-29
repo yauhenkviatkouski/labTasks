@@ -8,15 +8,13 @@ module.exports = {
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "extends": ["eslint:recommended", "google"],
   "rules": {
     "require-jsdoc": 0,
   },
   "plugins": [
-  ],
-  "parserOptions": {
-    "sourceType": "module"
-  }
+  ]
 };

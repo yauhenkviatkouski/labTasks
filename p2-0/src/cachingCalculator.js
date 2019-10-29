@@ -1,9 +1,9 @@
 export default class CachingCalc {
   constructor() {
-    this.cache = [];
+    this.cache = {};
   }
 
-  calculate(a, b, oper) {
+  calculate(a, b, operation) {
     a = Number(a);
     b = Number(b);
 
@@ -14,8 +14,8 @@ export default class CachingCalc {
         case '*': return a * b;
         case '/':
           if (b === 0) {
-            alert('TypeError: Devision by zero.');
-            throw new Error('TypeError: Devision by zero.');
+            alert('TypeError: Division by zero.');
+            throw new Error('TypeError: Division by zero.');
           }
           return a / b;
         default:
@@ -24,29 +24,17 @@ export default class CachingCalc {
       }
     }
 
-    const require = {
-      a: a,
-      b: b,
-      oper: oper,
-    };
-
-    for (let i = 0; i < this.cache.length; i += 1) {
-      if (require.a === this.cache[i].a &&
-        require.b === this.cache[i].b &&
-        require.oper === this.cache[i].oper) {
-        require.result = this.cache[i].result;
-        break;
-      }
+    const requireKey = '' + a + b + operation;
+    if (Object.prototype.hasOwnProperty.call(this.cache, requireKey)) {
+      return 'Result from cache: ' + this.cache[requireKey];
     }
 
-    if (require.result) return 'Result from cache: ' + require.result;
-    if (oper.length === 1) {
-      require.result = simpleCalc(a, b, oper);
+    if (operation.length === 1) {
+      this.cache[requireKey] = simpleCalc(a, b, operation);
     } else {
-      const customFunction = new Function('a', 'b', 'return ' + oper);
-      require.result = customFunction(a, b);
+      const customFunction = new Function('a', 'b', 'return ' + operation);
+      this.cache[requireKey] = customFunction(a, b);
     }
-    this.cache.push(require);
-    return 'No in cache. Result: ' + require.result;
+    return 'No in cache. Result: ' + this.cache[requireKey];
   }
 }

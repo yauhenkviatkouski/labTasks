@@ -10,7 +10,6 @@ export default class StringCalc {
         if ((brackets[i] === brConf[0] && brackets[i + 1] === brConf[1])) {
           brackets.splice(i, 2);
           i = (i === 0) ? i - 1 : i - 2;
-          continue;
         }
       }
       return false;

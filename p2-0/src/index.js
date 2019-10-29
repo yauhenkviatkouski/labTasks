@@ -1,17 +1,17 @@
-import ArrayProcessig from './arrayProcessig';
+import ArrayProcessing from './arrayProcessing';
 import DateDisplay from './dateDisplay';
 import TextFormatter from './textFormatter';
 import StringCalc from './stringCalculator';
 import ArraySorter from './arraySorter';
 import NumberConverter from './convertNum';
 import CachingCalc from './cachingCalculator';
-const arrayHandler = new ArrayProcessig;
-const dateHandler = new DateDisplay;
-const textHandler = new TextFormatter;
-const expressionHandler = new StringCalc;
-const araySorter = new ArraySorter;
-const numConverter = new NumberConverter;
-const cachingCalc = new CachingCalc;
+const arrayHandler = new ArrayProcessing();
+const dateHandler = new DateDisplay();
+const textHandler = new TextFormatter();
+const expressionHandler = new StringCalc();
+const arraySorter = new ArraySorter();
+const numConverter = new NumberConverter();
+const cachingCalc = new CachingCalc();
 
 const formList = document.querySelectorAll('form');
 Array.prototype.forEach.call(formList, (form) => {
@@ -85,49 +85,49 @@ Array.prototype.forEach.call(formList, (form) => {
       }
       case 'sort-quick-up': {
         const arrString = document.getElementById('sort-quick-up-field').value;
-        result = araySorter.quick(arrString);
+        result = arraySorter.quick(arrString);
         break;
       }
       case 'sort-quick-down': {
         const arrString =
           document.getElementById('sort-quick-down-field').value;
-        result = araySorter.quick(arrString, true);
+        result = arraySorter.quick(arrString, true);
         break;
       }
       case 'sort-selection-up': {
         const arrString =
           document.getElementById('sort-selection-up-field').value;
-        result = araySorter.selection(arrString);
+        result = arraySorter.selection(arrString);
         break;
       }
       case 'sort-selection-down': {
         const arrString =
           document.getElementById('sort-selection-down-field').value;
-        result = araySorter.selection(arrString, true);
+        result = arraySorter.selection(arrString, true);
         break;
       }
       case 'sort-insertion-up': {
         const arrString =
-          document.getElementById('sort-insertion-up-feild').value;
-        result = araySorter.insertion(arrString);
+          document.getElementById('sort-insertion-up-field').value;
+        result = arraySorter.insertion(arrString);
         break;
       }
       case 'sort-insertion-down': {
         const arrString =
           document.getElementById('sort-insertion-down-field').value;
-        result = araySorter.insertion(arrString, true);
+        result = arraySorter.insertion(arrString, true);
         break;
       }
       case 'sort-standard-up': {
         const arrString =
           document.getElementById('sort-standard-up-field').value;
-        result = araySorter.standard(arrString);
+        result = arraySorter.standard(arrString);
         break;
       }
       case 'sort-standard-down': {
         const arrString =
           document.getElementById('sort-standard-down-field').value;
-        result = araySorter.standard(arrString, true);
+        result = arraySorter.standard(arrString, true);
         break;
       }
       case 'convertNum': {

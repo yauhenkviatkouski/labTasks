@@ -1,5 +1,5 @@
-export default class ArrayProcessig {
-  getArrayFromJSON(arrayString) {
+export default class ArrayProcessing {
+  static getArrayFromJSON(arrayString) {
     try {
       const array = JSON.parse(arrayString);
       if (!Array.isArray(array)) throw new Error;
@@ -10,7 +10,7 @@ export default class ArrayProcessig {
   }
 
   subSumN2(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     let maxSubArray = 0;
     for (let i = 0; i < array.length; i += 1) {
       for (let j = i; j < array.length; j += 1) {
@@ -27,7 +27,7 @@ export default class ArrayProcessig {
   }
 
   subSumN(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     let maxSubArray = 0;
     let accumulator = 0;
     for (let i = 0; i < array.length; i += 1) {
@@ -42,21 +42,21 @@ export default class ArrayProcessig {
   }
 
   searchMin(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     return array.reduce((previous, item) => {
       return (item < previous) ? item : previous;
     });
   }
 
   searchMax(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     return array.reduce((previous, item) => {
       return (item > previous) ? item : previous;
     });
   }
 
   searchMedian(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     const quickSort = (arr) => {
       if (arr.length === 0) return [];
       const leftPart = [];
@@ -82,7 +82,7 @@ export default class ArrayProcessig {
   }
 
   selection(arrayString) {
-    const array = this.getArrayFromJSON(arrayString);
+    const array = ArrayProcessing.getArrayFromJSON(arrayString);
     let sequence = [array[0]];
     let maxSequence = sequence;
     for (let i = 1; i < array.length; i += 1) {
@@ -99,4 +99,3 @@ export default class ArrayProcessig {
   }
 }
 
-// export default ArrayProcessig;
